@@ -1,0 +1,30 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.koyomiji.refound.mixin",
+  "refmap": "refmap.refound.json",
+  "mixins": [
+    "advancements.MixinAdvancementManager",
+    "item.MixinItemStack",
+    "world.gen.structure.MixinStructureVillagePieces$Church",
+    "world.gen.structure.MixinStructureVillagePieces$Hall",
+    "world.gen.structure.MixinStructureVillagePieces$House1",
+    "world.gen.structure.MixinStructureVillagePieces$House2",
+    "world.gen.structure.MixinStructureVillagePieces$House3",
+    "world.gen.structure.MixinStructureVillagePieces$House4Garden",
+    "world.gen.structure.MixinStructureVillagePieces$Path",
+    "world.gen.structure.MixinStructureVillagePieces$Village",
+    "world.gen.structure.MixinStructureVillagePieces$Well",
+    "world.gen.structure.MixinStructureVillagePieces$WoodHut"
+  ],
+  "client": [
+    "client.MixinMinecraft",
+    "client.gui.MixinGuiCreateWorld",
+    "client.gui.MixinGuiListWorldSelection",
+    "client.gui.MixinGuiWorldSelection",
+    "client.gui.inventory.MixinGuiContainerCreative",
+    "client.settings.MixinGameSettings",
+    "creativetab.MixinCreativeTabsClient"
+  ],
+  "server": [
+  ]
+}
