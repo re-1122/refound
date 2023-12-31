@@ -1,4 +1,4 @@
-# ReFound
+# ReFound for 1.12.2
 
 ReFound provides several minor enhancements to Minecraft 1.12.2. ReFound serves as a dependency for [ReWind](https://github.com/re-1122/rewind) and [ReFlect](https://github.com/re-1122/reflect).
 
