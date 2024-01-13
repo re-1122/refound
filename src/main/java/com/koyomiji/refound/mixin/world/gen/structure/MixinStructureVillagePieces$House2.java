@@ -21,7 +21,7 @@ public abstract class MixinStructureVillagePieces$House2
   private IBlockState
   mixin(IBlockState original) {
     if (ReFoundConfig.rearrangeVillageGeneration) {
-      if (this.structureType != 2) {
+      if (this.structureType == 1) {
         return this.getBiomeSpecificBlockState(original);
       } else {
         return original;

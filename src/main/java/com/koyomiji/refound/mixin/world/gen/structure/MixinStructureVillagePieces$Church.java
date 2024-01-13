@@ -18,10 +18,10 @@ public abstract class MixinStructureVillagePieces$Church
   private IBlockState
   mixin(IBlockState original) {
     if (ReFoundConfig.rearrangeVillageGeneration) {
-      if (this.structureType == 2) {
-        return Blocks.COBBLESTONE.getDefaultState();
-      } else {
+      if (this.structureType == 1) {
         return this.getBiomeSpecificBlockState(original);
+      } else {
+        return original;
       }
     }
 
