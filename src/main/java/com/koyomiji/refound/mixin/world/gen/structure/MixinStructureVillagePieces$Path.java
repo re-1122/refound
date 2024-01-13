@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 public abstract class MixinStructureVillagePieces$Path
     extends StructureVillagePieces.Road {
   private IBlockState replaceBlock(IBlockState original) {
-    if (ReFoundConfig.rearrangeVillageGeneration) {
+    if (ReFoundConfig.fixVillageGeneration) {
       if (this.structureType == 2) {
         return Blocks.COBBLESTONE.getDefaultState();
       } else {

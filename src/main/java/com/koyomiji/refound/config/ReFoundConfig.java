@@ -36,7 +36,7 @@ public class ReFoundConfig {
   public static boolean duplicateWorldNameNumber = true;
 
   @Config.Comment("Fix some inconsistencies in village structures.")
-  public static boolean rearrangeVillageGeneration = true;
+  public static boolean fixVillageGeneration = true;
 
   @Config.
   Comment("Fix the issue that creative tabs have different clickable areas.")

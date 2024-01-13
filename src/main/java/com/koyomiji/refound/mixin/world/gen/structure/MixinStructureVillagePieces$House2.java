@@ -20,7 +20,7 @@ public abstract class MixinStructureVillagePieces$House2
       at = @At(value = "STORE"), name = "iblockstate")
   private IBlockState
   mixin(IBlockState original) {
-    if (ReFoundConfig.rearrangeVillageGeneration) {
+    if (ReFoundConfig.fixVillageGeneration) {
       if (this.structureType == 1) {
         return this.getBiomeSpecificBlockState(original);
       } else {

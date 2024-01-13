@@ -2,7 +2,6 @@ package com.koyomiji.refound.mixin.world.gen.structure;
 
 import com.koyomiji.refound.config.ReFoundConfig;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.init.Blocks;
 import net.minecraft.world.gen.structure.StructureVillagePieces;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,7 +16,7 @@ public abstract class MixinStructureVillagePieces$Church
       at = @At(value = "STORE"), name = "iblockstate")
   private IBlockState
   mixin(IBlockState original) {
-    if (ReFoundConfig.rearrangeVillageGeneration) {
+    if (ReFoundConfig.fixVillageGeneration) {
       if (this.structureType == 1) {
         return this.getBiomeSpecificBlockState(original);
       } else {
