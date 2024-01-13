@@ -12,8 +12,8 @@ ReFound is a part of [Re:1.12.2](https://github.com/re-1122) project.
   ![](docs/2023-12-31_10.41.09.png)
 - Revamped creative inventory (ported from 1.19.3+)
   ![](docs/2023-12-31_10.52.41.png)
-- Revamped savanna village generation 
-  ![](docs/2023-12-31_11.23.30.png)
+- Village generation fix
+  ![](docs/2024-01-14_00.59.38.png)
 - Turning off snooper setting automatically
 - Highly configurable; you can turn off any feature you don't like
 
