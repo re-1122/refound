@@ -17,6 +17,13 @@ ReFound is a part of [Re:1.12.2](https://github.com/re-1122) project.
 - Turning off snooper setting automatically
 - Highly configurable; you can turn off any feature you don't like
 
+## Installation
+
+1. Install [Minecraft Forge](https://files.minecraftforge.net/) for 1.12.2.
+2. Download [ReFound](https://github.com/re-1122/refound/releases) and put it into your mods folder.
+3. Launch the game.
+4. Enjoy!
+
 ## License
 
-Mozilla Public License 2.0
+ReFound is licensed under Mozilla Public License 2.0.
