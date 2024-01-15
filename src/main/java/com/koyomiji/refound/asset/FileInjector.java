@@ -19,9 +19,7 @@ public class FileInjector {
 
   public FileInjector(File archiveFile) { this.archiveFile = archiveFile; }
 
-  public void add(String path, byte[] data) {
-    filesToAdd.put(path, data);
-  }
+  public void add(String path, byte[] data) { filesToAdd.put(path, data); }
 
   public boolean exists(String path) {
     if (archiveFile.isFile()) {

@@ -1,6 +1,7 @@
 package com.koyomiji.refound.resources;
 
 import com.google.common.collect.ImmutableSet;
+import com.koyomiji.refound.TextureEditor;
 import java.awt.image.BufferedImage;
 import java.io.*;
 import java.util.Arrays;
@@ -8,8 +9,6 @@ import java.util.HashSet;
 import java.util.Set;
 import javax.annotation.Nullable;
 import javax.imageio.ImageIO;
-
-import com.koyomiji.refound.TextureEditor;
 import net.minecraft.client.renderer.texture.TextureUtil;
 import net.minecraft.client.resources.IResourcePack;
 import net.minecraft.client.resources.data.IMetadataSection;
@@ -35,7 +34,9 @@ public class OffsetAdjustedResourcePack extends ResourcePackModifier {
   }
 
   @Override
-  public InputStream modifyResource(ResourceLocation location, InputStream inputStream) throws IOException {
+  public InputStream modifyResource(ResourceLocation location,
+                                    InputStream inputStream)
+      throws IOException {
     if (boats.contains(location.toString())) {
       BufferedImage image = ImageIO.read(inputStream);
       BufferedImage edited = TextureEditor.offsetImage(image, 0, 1);

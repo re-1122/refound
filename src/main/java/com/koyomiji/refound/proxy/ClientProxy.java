@@ -1,9 +1,9 @@
 package com.koyomiji.refound.proxy;
 
-import com.koyomiji.refound.resources.OffsetAdjustedResourcePack;
 import com.koyomiji.refound.ReFound;
 import com.koyomiji.refound.config.ReFoundConfig;
 import com.koyomiji.refound.interfaces.IDefaultResourcePacksAccessor;
+import com.koyomiji.refound.resources.OffsetAdjustedResourcePack;
 import java.nio.file.Path;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.client.resource.VanillaResourceType;

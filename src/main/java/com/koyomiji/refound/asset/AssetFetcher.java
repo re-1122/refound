@@ -81,7 +81,8 @@ public class AssetFetcher {
       throw new RuntimeException(e);
     }
 
-    if (!DigestUtil.testSHA1(bytes, identifier.getSHA1()) || !testSize(identifier, bytes)) {
+    if (!DigestUtil.testSHA1(bytes, identifier.getSHA1()) ||
+        !testSize(identifier, bytes)) {
       return null;
     }
 

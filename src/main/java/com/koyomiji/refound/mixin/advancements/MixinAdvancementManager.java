@@ -1,9 +1,7 @@
 package com.koyomiji.refound.mixin.advancements;
 
 import com.koyomiji.refound.RecipeUnregisterer;
-
 import java.util.*;
-
 import net.minecraft.advancements.AdvancementManager;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
