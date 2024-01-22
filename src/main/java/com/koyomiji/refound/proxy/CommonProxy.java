@@ -1,13 +1,14 @@
 package com.koyomiji.refound.proxy;
 
 import com.google.common.collect.Sets;
-import com.koyomiji.refound.ReFound;
-import com.koyomiji.refound.ReFoundCreativeTabs;
-import com.koyomiji.refound.RecipeUnregisterer;
+import com.koyomiji.refound.*;
 import com.koyomiji.refound.config.ReFoundConfig;
 import java.nio.file.Path;
 import java.util.Map;
 import java.util.Set;
+
+import com.koyomiji.refound.setup.ISetupProcess;
+import com.koyomiji.refound.setup.SetupQueue;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipe;
@@ -26,7 +27,23 @@ public abstract class CommonProxy {
 
   public void preInit(FMLPreInitializationEvent event) {}
 
-  public void init(FMLInitializationEvent event) {}
+  public void init(FMLInitializationEvent event) {
+    boolean needsRestart = false;
+
+    for (ISetupProcess handler : SetupQueue.setupProcesses) {
+      if (handler.needsSetup()) {
+        handler.setup();
+
+        if (handler.needsRestart()) {
+          needsRestart = true;
+        }
+      }
+    }
+
+    if (needsRestart) {
+      throw new IntentionalSetupCrashException("This is an intentional crash to force the game to restart. Please restart the game.");
+    }
+  }
 
   public void postInit(FMLPostInitializationEvent event) {}
 
