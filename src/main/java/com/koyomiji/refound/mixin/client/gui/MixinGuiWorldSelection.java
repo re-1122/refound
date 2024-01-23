@@ -4,6 +4,7 @@ import com.koyomiji.refound.config.ReFoundConfig;
 import com.koyomiji.refound.interfaces.ISearchFieldGetterAccessor;
 import java.io.IOException;
 import net.minecraft.client.gui.*;
+import org.lwjgl.input.Keyboard;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
@@ -17,6 +18,8 @@ public class MixinGuiWorldSelection extends GuiScreen {
 
   @Inject(method = "initGui", at = @At(value = "RETURN"))
   private void mixin2(CallbackInfo ci) {
+    Keyboard.enableRepeatEvents(true);
+
     String prevSearch =
         refound$searchField == null ? "" : refound$searchField.getText();
     refound$searchField =
