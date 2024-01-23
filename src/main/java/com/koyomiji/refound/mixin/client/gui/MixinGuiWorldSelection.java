@@ -93,4 +93,9 @@ public class MixinGuiWorldSelection extends GuiScreen {
       refound$searchField.mouseClicked(mouseX, mouseY, mouseButton);
     }
   }
+
+  @Override
+  public void onGuiClosed() {
+    Keyboard.enableRepeatEvents(false);
+  }
 }
