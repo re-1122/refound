@@ -1,7 +1,7 @@
 package com.koyomiji.refound.mixin.client.gui;
 
+import com.koyomiji.refound.client.gui.IGuiWorldSelectionExt;
 import com.koyomiji.refound.config.ReFoundConfig;
-import com.koyomiji.refound.interfaces.ISearchFieldGetterAccessor;
 import java.io.IOException;
 import net.minecraft.client.gui.*;
 import org.lwjgl.input.Keyboard;
@@ -12,11 +12,11 @@ import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(GuiWorldSelection.class)
-public class MixinGuiWorldSelection extends GuiScreen {
+public class MixinGuiWorldSelection extends GuiScreen implements IGuiWorldSelectionExt {
   @Shadow private GuiListWorldSelection selectionList;
   @Unique private GuiTextField refound$searchField;
 
-  @Inject(method = "initGui", at = @At(value = "RETURN"))
+  @Inject(method = "initGui", at = @At(value = "HEAD"))
   private void mixin2(CallbackInfo ci) {
     Keyboard.enableRepeatEvents(true);
 
@@ -25,14 +25,6 @@ public class MixinGuiWorldSelection extends GuiScreen {
     refound$searchField =
         new GuiTextField(0, this.fontRenderer, width / 2 - 100, 22, 200, 20);
     refound$searchField.setText(prevSearch);
-    ISearchFieldGetterAccessor accessor =
-        (ISearchFieldGetterAccessor)selectionList;
-    accessor.refound$setSearchFieldGetter(() -> refound$searchField.getText());
-
-    if (ReFoundConfig.enableWorldSearch) {
-      selectionList.refreshList();
-    }
-
     refound$searchField.setFocused(true);
   }
 
@@ -97,5 +89,15 @@ public class MixinGuiWorldSelection extends GuiScreen {
   @Override
   public void onGuiClosed() {
     Keyboard.enableRepeatEvents(false);
+  }
+
+  @Override
+  public GuiTextField refound$getSearchField() {
+    return refound$searchField;
+  }
+
+  @Override
+  public GuiListWorldSelection refound$getWorldSelectionList() {
+    return selectionList;
   }
 }

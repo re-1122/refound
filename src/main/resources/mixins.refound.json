@@ -13,6 +13,7 @@
     "client.MixinMinecraft",
     "client.gui.MixinGuiCreateWorld",
     "client.gui.MixinGuiListWorldSelection",
+    "client.gui.MixinGuiListWorldSelectionEntry$2",
     "client.gui.MixinGuiWorldSelection",
     "client.gui.inventory.MixinGuiContainerCreative",
     "client.settings.MixinGameSettings",
